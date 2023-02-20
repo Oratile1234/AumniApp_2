@@ -1,0 +1,27 @@
+<div class="col-3 rightSection">
+    <div class="flex-justify-center">
+
+      <div class="notif text-center">
+        <h1 class="font-bold text-2xl flex justify-center not">Notifications</h1>
+      </div>
+    <!-- notification -->
+
+    <div class="grid grid-cols-1 grid-rows-4 xs:grid-cols-2 gap-2 box">
+          <div class="cards card-compact w-full bg-base-100 shadow-xl notif" *ngFor="let notif of userNotifs">
+            <div class="card-body profileBody">
+              <div class="flex-row top flex-row">
+                <img src={{notif.imagenew}} class="profile">
+              <!-- <h5 class="mb-1 name">{{userNotifs.name}}</h5> -->
+              <p class="mb-1 pb-1 timeNow">{{notif.user_time_stamp | date:'medium'}}</p>
+              </div>
+              <div class="bottom">
+                <p class="msg">Profile picture change {{message}}</p>
+              </div>
+            </div>
+        </div>
+
+      </div>
+    </div>
+</div>
+
+

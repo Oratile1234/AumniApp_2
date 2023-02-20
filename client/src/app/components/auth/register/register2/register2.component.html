@@ -1,0 +1,93 @@
+<div class="main py-5">
+    <p class="text-center mb-3">Register now to connect with your alumni</p>
+    <div class="container d-flex justify-content-center align-items-center mb-5">
+        <div class="progresses">
+            <div class="steps">
+                <span class="font-weight-bold">1</span>
+            </div>
+
+            <span class="line"></span>
+
+            <div class="steps active">
+                <span class="present">2</span>
+            </div>
+
+            <span class="line"></span>
+
+            <div class="steps">
+                <span class="font-weight-bold">3</span>
+            </div>
+
+            <span class="line"></span>
+
+            <div class="steps">
+                <span class="font-weight-bold">4</span>
+            </div>
+        </div>
+    </div>
+
+    <section class="vh-95 bg-image">
+        <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+            <div class="container h-100">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                        <div class="card shadow" style="border-radius: 15px;">
+                            <b class="text-center fs-3 text-capitalize mt-1">administrator details</b>
+                            <div class="card-body p-4">
+
+                                <form [formGroup]="forms" (ngSubmit)="onSubmit()">
+
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="admin_name">Administrator name</label>
+                                        <input type="text" id="admin_name" class="form-control form-control-lg" formControlName="admin_name" [ngClass]="{ 'is-invalid': submitted && f['admin_name'].errors }" />
+                                        <div *ngIf="submitted && f['admin_name'].errors" class="invalid-feedback">
+                                            <div *ngIf="f['admin_name'].errors['required']">Administrator name is required</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="employee_no">Employee number</label>
+                                        <input type="text" id="employee_no" class="form-control form-control-lg" formControlName="employee_no" [ngClass]="{ 'is-invalid': submitted && f['employee_no'].errors }" />
+                                        <div *ngIf="submitted && f['employee_no'].errors" class="invalid-feedback">
+                                            <div *ngIf="f['employee_no'].errors['required']">Employee number is required</div>
+                                            <div *ngIf="f['employee_no'].errors['minlength']">Employee number must be at least 4 numbers</div>
+                                            <div *ngIf="f['employee_no'].errors['maxlength']">Employee number must not exceed 6 numbers</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="email">Email</label>
+                                        <input type="email" id="email" class="form-control form-control-lg" formControlName="email" [ngClass]="{ 'is-invalid': submitted && f['email'].errors }" />
+                                        <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+                                            <div *ngIf="f['email'].errors['required']">Password is required</div>
+                                            <div *ngIf="f['email'].errors['minlength']">Password must be at least 8 characters</div>
+                                            <div *ngIf="f['email'].errors['maxlength']">Password must not exceed 40 characters</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="password">Password</label>
+                                        <input type="password" id="password" class="form-control form-control-lg" formControlName="password" [ngClass]="{ 'is-invalid': submitted && f['password'].errors }" />
+                                        <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+                                            <div *ngIf="f['password'].errors['required']">Password is required</div>
+                                            <div *ngIf="f['password'].errors['minlength']">Password must be at least 8 characters</div>
+                                            <div *ngIf="f['password'].errors['maxlength']">Password must not exceed 40 characters</div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="d-flex justify-content-between">
+                                        <button type="button" class="btn backBtn" [routerLink]="['/auth/step']">Back</button>
+                                        <button type="submit" class="btn nextBtn" (click)="newMessage()" (click)="onSubmit()">Next</button>
+                                    </div>
+                                    <button type="button" class="btn btn-outline-warning cancel" [routerLink]="['/intro/splash']" routerLinkActive="router-link-active">Cancel</button>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

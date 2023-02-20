@@ -1,0 +1,94 @@
+.head {
+    margin-left: 10%;
+}
+
+.h {
+    color: #0e98ba;
+    margin-left: 200px;
+}
+
+.card {
+    border: none;
+    color: white;
+    height: 10rem;
+    cursor: pointer;
+}
+
+// Initials profile picture styling
+.circle{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgProfile{
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+
+.avatar {
+    color: #fff; 
+    padding: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius:50%;
+    border: 2px solid grey;
+    width:30px;
+    height: 30px;
+    font-weight: 600;
+}
+
+.a {
+    background-color: #012169;
+}
+
+.b {
+    background-color: #0D98BA;
+}
+
+.c {
+    background-color: #1f305ec7;
+}
+
+.d {
+    background-color: #f8f9fa;
+    color: #012169;
+}
+
+.snap-sec {
+    border-left: solid 5px #0e98ba;
+    height: 90vh;
+    .notifs {
+        max-height: 38vh;
+        overflow: hidden;
+    }
+    img {
+        width: 3rem;
+        border-radius: 50%;
+        height: 5.5vh;
+    }
+    button {
+        color: grey;
+         :hover {
+            color: #0e98ba;
+            ;
+        }
+    }
+}
+
+// ============= Mobile View ============== //
+@media (max-width: 991px) {
+    .snap-sec {
+        display: none;
+    }
+    .head {
+        text-align: center;
+        margin-left: 0 !important;
+    }
+}
+

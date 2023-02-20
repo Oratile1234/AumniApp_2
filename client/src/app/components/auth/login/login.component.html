@@ -1,0 +1,75 @@
+<!-- 
+<section class="vh-100 " style="background-color: #F3F2F2">
+    <div class="container d-flex  align-items-center justify-content-center vh-100 w-100 " >
+      <div class="container column d-flex flex-column  align-items-center "> -->
+<!-- <section class="vh-100 gradient-custom" style="background-color: #F3F2F2">
+    <div class="container py-5 h-100">
+      <div class="row d-flex flex-column justify-content-center align-items-center h-100"> -->
+
+
+
+<section class="vh-100" style="background-color: #F3F2F2">
+    <div class="container d-flex  align-items-center justify-content-center vh-100 w-100 ">
+        <div class="container column d-flex flex-column  align-items-center ">
+
+            <!-- logi insertation -->
+            <img src="https://cdn.discordapp.com/attachments/988341830074638408/1014491385086361621/Group_7_3.png">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-7">
+                <div class="card bg-white text-black" style="border-radius: 1rem;">
+                    <div class="card-body p-5 ">
+                        <!-- declare formGroup and call onSubmit function from the ts  -->
+                        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                            <div class="form-group mb-md-1 mt-md-1 pb-5">
+                                <!-- Employee number input -->
+                                <div class="form-group form-outline form-white mb-4">
+                                    <label class="form-label" for="typeEmailX">Employee number</label>
+                                    <input placeholder="12345" formControlName="employee" type="text" id="employee-number" class="form-control form-control-lg" [ngClass]="{ 'is-invalid': submitted && f['employee'].errors }" />
+                                    <!-- employee number validations -->
+                                    <div *ngIf="submitted && f['employee'].errors" class="invalid-feedback">
+                                        <div *ngIf="f['employee'].errors['required']">Employee number is required</div>
+                                        <div *ngIf="f['employee'].errors['minlength']">Employee number must be at least 4 characters</div>
+                                        <div *ngIf="f['employee'].errors['maxlength']">Employee number must not exceed 6 characters</div>
+                                        <div *ngIf="f['employee'].dirty && f['employee'].errors">Minimun of 4 characters is required.</div>
+                                    </div>
+                                </div>
+
+                                <!-- password input -->
+                                <div class="form-group form-outline form-white mb-4">
+                                    <label class="form-label" for="typePasswordX">Password</label>
+                                    <input placeholder="*****" formControlName="password" type="password" id="Password" class="form-control form-control-lg" [ngClass]="{ 'is-invalid': submitted && f['password'].errors }" />
+
+                                    <!-- password validations -->
+                                    <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+                                        <div *ngIf="f['password'].errors['required']">Password is required</div>
+                                        <div *ngIf="f['password'].errors['minlength']">Password must be at least 8 characters</div>
+                                        <div *ngIf="f['password'].errors['maxlength']">Password must not exceed 40 characters</div>
+                                        <div *ngIf="f['password'].dirty && f['password'].errors">Minimun of 8 characters is required.</div>
+                                    </div>
+
+                                </div>
+
+
+                                <button class="btn text-white  btn-lg px-5  " type="submit">LOGIN</button>
+                            </div>
+
+                            <div>
+
+                                <p class="mb-0 fw-bold text-center">Don't have an account? <a style="color:#0d98ba ;" class="fw-bold " type="route" [routerLink]="['/auth/step']" routerLinkActive="router-link-active">Register</a>
+                                </p>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<p-toast position="bottom-left" key="tc"></p-toast>
+<ngx-loading [show]="loading" [config]="{
+    animationType: ngxLoadingAnimationTypes.circleSwish,
+    primaryColour: '#ffffff', secondaryColour: '#ffffff',
+    backdropBorderRadius: '3px'
+  }">
+</ngx-loading>

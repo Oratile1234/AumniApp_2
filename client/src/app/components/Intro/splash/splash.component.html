@@ -1,0 +1,28 @@
+<div class="containerr">
+
+    <div class=" logo d-flex align-items-center justify-content-center ">
+        <img src="https://cdn.discordapp.com/attachments/988341830074638408/1014491385086361621/Group_7_3.png ">
+    </div>
+
+    <div class="container text-center fs-4 fw-bold mt-1 gap-2">
+        <p class="slogen fs-2">Struggling to connect with your alumni?</p>
+
+        <div class="c1 d-flex flex-row" style="margin-top: 6vh; margin-left: 110px; ">
+            <p>The<a [routerLink]="[ '/auth/login'] "> Alumni app</a> allows you to network and engage with alumni who can accomplish the job and fit the corporate culture.
+            </p>
+        </div>
+
+        <div class="c2 d-flex flex-row  " style="margin-top: 1vh;margin-left: 80px; ">
+            <p>Click the <a [routerLink]="[ '/auth/step'] ">register</a> to set up a company account and interact with your alumni, or <a [routerLink]="[ '/public/explore'] ">explore</a> to see top skilled unemployed candidates.</p>
+            <!-- <p ><a style="color: #0D98BA; text-decoration: underline; "routerLink="/public/explore "> Click here </a></p> -->
+        </div>
+    </div>
+
+
+    <div class="mybtns d-flex ">
+
+        <button class="btn1 text-white btn-lg shadow " type="submit " [routerLink]="[ '/auth/step'] ">Register</button>
+        <button name="Explore " class="btn2 text-white btn-lg shadow " type="submit " [routerLink]="[ '/public/explore'] ">Explore</button>
+    </div>
+
+</div>

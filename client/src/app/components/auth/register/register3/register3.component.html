@@ -1,0 +1,73 @@
+<div class="main py-5">
+    <p class="text-center mb-3">Register now to connect with your alumni</p>
+    <div class="container d-flex justify-content-center align-items-center mb-5">
+        <div class="progresses">
+            <div class="steps">
+                <span class="font-weight-bold">1</span>
+            </div>
+
+            <span class="line"></span>
+
+            <div class="steps ">
+                <span class="font-weight-bold">2</span>
+            </div>
+
+            <span class="line"></span>
+
+            <div class="steps active">
+                <span class="present">3</span>
+            </div>
+
+            <span class="line"></span>
+
+            <div class="steps">
+                <span class="font-weight-bold">4</span>
+            </div>
+        </div>
+    </div>
+
+    <section class="vh-95 bg-image">
+        <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+            <div class="container h-100">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                        <div class="card shadow" style="border-radius: 15px;">
+                            <b class="text-center fs-3 text-capitalize mt-1">social media links</b>
+                            <div class="card-body p-4">
+
+                                <form>
+
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="facebook">Facebook (Optional)</label>
+                                        <input type="text" id="facebook" class="form-control form-control-lg" />
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="instagram">Instagram (Optional)</label>
+                                        <input type="text" id="instagram" class="form-control form-control-lg" />
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="twitter">Twitter (Optional)</label>
+                                        <input type="text" id="twitter" class="form-control form-control-lg" />
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="linkedin">Linkedin (Optional)</label>
+                                        <input type="text" id="linkedin" class="form-control form-control-lg" />
+                                    </div>
+
+                                    <div class="d-flex justify-content-between">
+                                        <button type="button" class="btn backBtn" [routerLink]="['/auth/step2']">Back</button>
+                                        <button type="submit" class="btn nextBtn" [routerLink]="['/auth/step4']">Next</button>
+                                    </div>
+
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

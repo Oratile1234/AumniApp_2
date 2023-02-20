@@ -1,0 +1,256 @@
+
+:host ::ng-deep .multiselect-custom
+  .p-multiselect {
+      padding-top: .25rem;
+      padding-bottom: .25rem;
+      border-radius: 0.5rem;
+  }
+
+.expertises{
+  background-color: skyblue;
+  margin: 1rem;
+}
+.textarea{
+  width: 95%;
+}
+.mine{
+  margin-left: 15px;
+}
+
+.topContainer{
+  width: 98vw;
+  margin-left: -0.7rem;
+}
+
+.email{
+  word-wrap: break-word;
+}
+
+#Skills-placeholder{
+  max-width: 30%;
+}
+
+.rating{
+ width: 40vw;
+}
+
+.formDiv{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 95%;
+  margin: 0 auto;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
+.secondDiv{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.expertise{
+  background-color: skyblue;
+  margin: 1rem;
+}
+.containter{
+  margin-top: 1rem;
+  height: 100%;
+}
+
+.circle{
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgProfile{
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    // transform: traslateX(-1rem);
+}
+
+.avatar {
+    color: #fff; 
+    padding: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius:50%;
+    border: 2px solid grey;
+    width:50px;
+    height: 50px;
+    font-weight: 600;
+}
+
+
+@media screen  and (min-width: 600px) and (max-width: 800px){
+  .main{
+    margin-left: 8%;
+  }
+.containter{
+  width: 100%;
+  height: 87%;
+}
+}
+
+.addBtn{
+  background-color: #0D98BA;
+  padding: 5px 35px;
+  border-radius: 5px;
+  text-transform: none;
+  margin-top: 5%;
+  font-weight: bold;
+  margin-left: 0;
+}
+
+.backBtn{
+  background-color: var(--btn_secondary);
+  padding: 5px 35px;
+  border-radius: 5px;
+  text-transform: none;
+  margin-top: 5%;
+  font-weight: bold;
+}
+
+.projectDiv{
+  width: 97%;
+  margin: 0 auto;
+}
+
+.buttonDiv{
+  width: 60%;
+  margin: 0 auto;
+}
+
+
+select:required:invalid {
+  color: #666;
+}
+option[value=""][disabled] {
+  display: none;
+}
+option {
+  color: #000;
+}
+
+.main {
+    background-color: #0D98BA;
+    margin: 0;
+
+    .card {
+        height: 90vh;
+        overflow: scroll;
+        margin-top: 2rem;
+    }
+    b {
+        color: black;
+        font-weight: bold;
+    }
+    .card-body{
+       margin-top: 2rem;
+    }
+}
+.expertise{
+  width: 90%;
+  height: 110%;
+  background-color: #0D98BA;
+  border-radius: 4px;
+}
+
+@media screen  and (min-width: 300px) and (max-width: 760px){
+  .expertise{
+    width: 110%;
+    height: 60%;
+    background-color: #0D98BA;
+    border-radius: 4px;
+    font-size: 65%;
+    font-weight: bold;
+  }
+}
+
+
+.ratingDivMobile{
+  display: none;
+}
+
+@media screen and (max-width: 770px){
+  .main {
+    background-color: #0D98BA;
+    height: 100vh;
+    .card {
+        height: 85vh;
+        overflow: scroll;
+    }
+    b {
+        color: black;
+        font-weight: bold;
+    }
+}
+
+  img{
+    margin: 45px;
+    margin-top: 10px;
+  }
+  .buttonDiv{
+    padding: 0;
+    margin: 0;
+   display: flex;
+   justify-content: space-between;
+  }
+  .projectDiv{
+    width: 100%;
+    padding-left: 1rem;
+  }
+  .addBtn{
+    margin-left: 2rem;
+  }
+.backBtn{
+  margin-left: 2rem;
+}
+  .ratingDiv{
+    display: none;
+  }
+  .ratingDivMobile{
+    width: 25vw;
+    margin-left: -4rem;
+    display: block;
+  }
+  .card-body {
+    margin-right: 19px;
+    margin-top: 20px;
+  }
+}
+.btn1{
+  background-color: var(--mainBtnColor);
+  border-radius: 0.5rem;
+  height: 1rem;
+  width: 35%;
+  text-align: center;
+  font-weight: 700;
+  border: none;
+  margin-left: 1rem;
+}
+.btn1{
+  background-color: var(--mainBtnColor);
+  border-radius: 0.5rem;
+  height: 1rem;
+  width: 85%;
+  text-align: center;
+  font-weight: 700;
+  border: none;
+  margin-left: 1rem;
+}
+
+.toggleSenior:checked{
+  background-color: #0D98BA;
+}
+.toggleSenior{
+  background-color: #FF7F00;
+
+}

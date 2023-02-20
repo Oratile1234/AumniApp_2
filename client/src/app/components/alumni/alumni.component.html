@@ -1,0 +1,112 @@
+<router-outlet></router-outlet>
+
+<!-- <div class=" fixed bottom-0 left-0 right-0 navbar bg-base-100 shadow mainContainer">
+    <form class="d-flex formDiv">
+        <a class="nav-link active" aria-current="page" [routerLink]="['/alumni/alumni']"
+            routerLinkActive="router-link-active">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+                <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+              </svg>
+
+              <span class="home">Home</span>
+
+        </a>
+        <a class="nav-link active" aria-current="page" [routerLink]="['/alumni/notifs']"
+            routerLinkActive="router-link-active">
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell  meNotif" viewBox="0 0 16 16">
+                <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"/>
+              </svg>
+              <span class="badge">{{notifsCounter}}</span>
+              <span class="notify">Notifications</span>
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/>
+              </svg><span class="home">Home</span>
+
+        </a>
+        <a class="nav-link active" aria-current="page" [routerLink]="['/alumni/notifs']"
+            routerLinkActive="router-link-active">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell-fill meNotif" viewBox="0 0 16 16">
+                <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"/>
+              </svg><span class="notify">Notifications</span>
+
+        </a>
+
+        <a class="nav-link active" aria-current="page" [routerLink]="['/alumni/profile']"
+            routerLinkActive="router-link-active"><img src="https://images.pexels.com/photos/13440765/pexels-photo-13440765.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt=""
+                class="h-10 w-10 flex-shrink-0 rounded-full image"><span class="prof">Profile</span></a>
+    </form>
+</div> -->
+
+
+<!-- component -->
+<div class="w-full  d-flex flex-row ">
+  <!-- <section id="bottom-navigation" class="md:hidden block fixed inset-x-0 bottom-0 z-10 bg-white shadow"> // if shown only tablet/mobile-->
+  <section id="bottom-navigation" class="block fixed inset-x-0 bottom-0 z-10 shadow">
+    <div id="tabs" class="flex justify-between">
+      <a [routerLink]="['home']"
+        class="w-full focus:text-teal-500 hover:text-teal-500 justify-center inline-block text-center mt-2">
+        <svg width="20" height="20" viewBox="0 0 42 42" class="inline-block mb-1 text-white">
+          <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <path
+              d="M21.0847458,3.38674884 C17.8305085,7.08474576 17.8305085,10.7827427 21.0847458,14.4807396 C24.3389831,18.1787365 24.3389831,22.5701079 21.0847458,27.6548536 L21.0847458,42 L8.06779661,41.3066256 L6,38.5331279 L6,26.2681048 L6,17.2542373 L8.88135593,12.4006163 L21.0847458,2 L21.0847458,3.38674884 Z"
+              fill="currentColor" fill-opacity="0.1"></path>
+            <path
+              d="M11,8 L33,8 L11,8 Z M39,17 L39,36 C39,39.3137085 36.3137085,42 33,42 L11,42 C7.6862915,42 5,39.3137085 5,36 L5,17 L7,17 L7,36 C7,38.209139 8.790861,40 11,40 L33,40 C35.209139,40 37,38.209139 37,36 L37,17 L39,17 Z"
+              fill="currentColor"></path>
+            <path
+              d="M22,27 C25.3137085,27 28,29.6862915 28,33 L28,41 L16,41 L16,33 C16,29.6862915 18.6862915,27 22,27 Z"
+              stroke="currentColor" stroke-width="2" fill="currentColor" fill-opacity="0.1"></path>
+            <rect fill="currentColor"
+              transform="translate(32.000000, 11.313708) scale(-1, 1) rotate(-45.000000) translate(-32.000000, -11.313708) "
+              x="17" y="10.3137085" width="30" height="2" rx="1"></rect>
+            <rect fill="currentColor"
+              transform="translate(12.000000, 11.313708) rotate(-45.000000) translate(-12.000000, -11.313708) " x="-3"
+              y="10.3137085" width="30" height="2" rx="1"></rect>
+          </g>
+        </svg>
+        <span class="tab tab-home block text-s text-white">Home</span>
+      </a>
+      <a [routerLink]="['/alumni/notifs']" routerLinkActive="router-link-active"
+        class="w-full focus:text-teal-500 hover:text-teal-500 justify-center inline-block text-center mt-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+          class="bi bi-bell text-white inline-block mb-1" viewBox="0 0 16 16">
+          <path
+            d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z" />
+        </svg>
+        <span class="tab tab-kategori block text-s text-white">Notifications</span>
+      </a>
+      <a href="#"
+        class="w-full focus:text-teal-500 hover:text-teal-500 justify-center inline-block text-center mt-1 picTab"
+        [routerLink]="['/alumni/profile']">
+
+        <!-- <img src="https://images.pexels.com/photos/13440765/pexels-photo-13440765.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" class="h-8 w-8 flex-shrink-0 rounded-full image inline-block mb-1"> -->
+        <!-- Initials profile picture styling -->
+        <div class="circle">
+          <img src={{photoUrl}} *ngIf="showInitials == false"
+            class="imgProfile h-8 w-8 flex-shrink-0 rounded-full image inline-block">
+          <div class="avatar h-8 w-8 flex-shrink-0 rounded-full image inline-block text-white"
+            *ngIf="showInitials == true" [ngStyle]="{'background-color': circleColor}"> {{ firstname }}{{ lastname }}
+          </div>
+        </div>
+        <span class="tab tab-explore block text-s text-white profile">Profile</span>
+
+      
+      </a>
+
+      <a [routerLink]="['/auth/login']"
+      class="w-full focus:text-teal-500 hover:text-teal-500 justify-center inline-block text-center mt-2">
+      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+        class="bi bi-box-arrow-right logout" viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+          d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z" />
+        <path fill-rule="evenodd"
+          d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
+      </svg>
+      <span class="tab tab-kategori block text-s text-white">Logout</span>
+    </a>
+    </div>
+  </section>
+</div>

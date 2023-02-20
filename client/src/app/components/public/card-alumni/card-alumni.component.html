@@ -1,0 +1,247 @@
+
+
+
+<div class="main">
+  <!-- header starts -->
+  <div class="row d-flex justify-content-between py-5 fs-2" id="header">
+      <div class="col-md-6 title">
+          <h1 class="available text-center">Available for employement</h1>
+      </div>
+      <div class="col-md-6 search">
+          <form class="w-75" role=" search ">
+              <input class="form-control searchInput " type="search " name="searchTerm " placeholder="Search " autocomplete="off " [(ngModel)]="searchTerm " (input)="search(searchTerm) " size="50 ">
+          </form>
+      </div>
+  </div>
+  <!-- heder ends -->
+  <div class="row mx-2">
+    <div class="col-md-3 col-6" *ngFor="let user of uSers | Search:searchTerm | paginate: { itemsPerPage: 12, currentPage: p, totalItems: total }; index as i ">
+
+      <!-- cards starts -->
+      <div class="card mb-3" (click)="getUserInfo(i)">
+        <!-- the profile photo -->
+        <div class="m-auto">
+          <!-- <img src="{{user.image}} " class="rounded-circle mt-3 "> -->
+          <div class="circle" >
+            <img src={{user.image}} *ngIf="user.image; else elseBlock" class="imgProfile pic">
+
+            <ng-template #elseBlock>
+              <div class="avatar profilePic" [ngStyle]="{'background-color': circleColor[i]}">{{ user.name[0].toUpperCase() }}{{ user.surname[0].toUpperCase() }}</div>
+            </ng-template>
+           
+          </div>
+        </div>
+
+        <!-- cointainer to hold alumni details -->
+        <div class="card-body mt-2 ">
+          <!-- alumni name -->
+          <h6 class="text-center fw-bold">{{user.name}} {{user.surname}}</h6>
+
+          <!-- alumni job tittle -->
+          <div class="text-center mt-2 ">
+            <span class="text-center ">{{user.job_title}}</span>
+          </div>
+          <!-- cards ends -->
+          <!-- dialog starts -->
+          <p-dialog [(visible)]="display " [breakpoints]="{ '900px': '25vw', '500px': '80vw'} " [style]="{width: '70vw'} ">
+              <div>
+                  <div>
+                      <h1>Skills</h1>
+                      <p>{{user.employement_status}}</p>
+                  </div>
+                  <div>
+                      <h1> Expertise</h1>
+                  </div>
+              </div>
+              <b>
+                          <h3>Copy the profile link below: to <a href="">share</a>
+                            <!-- the share icon/button -->
+    <svg
+                  xmlns="http://www.w3.org/2000/svg " fill="none " viewBox="0 0 24 24 " stroke-width="1.5 "
+                  stroke="currentColor " class="w-6 h-6 ">
+                  <path stroke-linecap="round " stroke-linejoin="round " d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25
+          2.25 0 00-3.933 2.185z " />
+              </svg>
+                          </h3>
+                      </b>
+              <h2>{{user.employee_number}}</h2>
+
+          </p-dialog>
+          <!-- dialog ends -->
+      </div>
+      <!-- cards ends -->
+
+    </div>
+
+
+  </div>
+  <!-- </div> -->
+
+  <!-- start of pagination -->
+  <div class="flex justify-center mt-5 mb-2 ">
+      <div class="pgn ">
+          <pagination-controls (pageChange)="pageChangeEvent($event) "></pagination-controls>
+      </div>
+  </div>
+  <!-- end of pagination -->
+
+  <!-- show profile -->
+
+  <p-dialog [(visible)]="showProfile" header="User Profile" [breakpoints]="{'900px': '100vw', '500px': '100vw'}"
+  [style]="{width: '50vw'}">
+
+
+
+  <div class="main p-3 text-capitalize ">
+
+    <!-- <div class="container "> -->
+    <div *ngIf="number !=0 ">
+      <div class="card ">
+        <div class="card-body ">
+          <!-- personal information start-->
+          <div class="d-flex justify-content-center" style="margin-top: 15px;">
+            <!-- <div (onLoad)="getUserInfo(i) "> -->
+            <!-- <div>
+              <a (click)="showDialog()"><img src="{{userProfile?.image}} " alt="image "
+                  class="h-20 w-20 flex-shrink-0 rounded-full " /></a>
+            </div> -->
+            <div class="circle" (click)="showDialog()">
+
+              <!-- <img src={{photoUrl}} *ngIf="showInitials == false" class="imgProfile">
+              <div class="avatar" *ngIf="showInitials == true" [ngStyle]="{'background-color': circleColor}"> {{ userProfile?.name[0].toUpperCase() }}{{ userProfile?.surname[0].toUpperCase() }}</div> -->
+
+  
+                <img src={{photoUrl}} *ngIf="photoUrl; else elseBlock" class="imgProfile">
+    
+                <ng-template #elseBlock>
+                  <div class="avatar" [ngStyle]="{'background-color': bgColor}">{{ userProfile?.name[0].toUpperCase() }}{{ userProfile?.surname[0].toUpperCase() }}</div>
+                </ng-template>
+
+
+            </div>
+            
+          </div>
+          <div class="ml-16 ">
+            <h2 style="color: #0D98BA; font-weight: bold; ">{{userProfile?.name}} {{userProfile?.surname}}
+            </h2>
+            <p style="margin-top: 2px; font-weight: bold; ">{{userProfile?.job_title}}</p>
+            <div class="d-flex flex-row gap-3 mt-1 ">
+              <svg xmlns="http://www.w3.org/2000/svg " width="15 " height="27 " viewBox="0 0 512 512 ">
+                <path
+                  d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z " />
+              </svg>
+              <p><a>{{userProfile?.phone_number}}</a></p>
+            </div>
+            <div class="d-flex flex-row gap-3 ">
+              <svg xmlns="http://www.w3.org/2000/svg " width="15 " height="27 " viewBox="0 0 512 512 ">
+                <path
+                  d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4339.2c-22.8 17.1-54 17.1-76.8 0L0 176z " />
+              </svg>
+              <p class="text-lowercase"><a>{{userProfile?.email}}</a></p>
+            </div>
+          </div>
+        </div>
+        <!-- personal information end-->
+        <div class="m-2 bg-fixed ...">
+          <!-- bio starts -->
+          <div class="text-center">
+            <div class="mt-1 m-5">
+              <p>summary</p>
+              <div class="mt-1 text-center m-2 bg-fixed ... summaryDiv" *ngFor="let sumer of Summaries index as i "
+              (onLoad)="getUserSummary(i)">
+              <p>{{sumer.summary}}</p>
+              <!-- <p>{{details.summary}}</p> -->
+            </div>
+            </div>
+          </div>
+          <!-- bio ends -->
+          <!-- skills starts -->
+          <div class="text-center mt-3 mr-10">
+            <b class="text-capitalize ">skills</b>
+            <div class="mt-1 row">
+              <div class="grid grid-rows-3 grid-flow-col gap-3 mt-6">
+                <div class="d-flex m-2" *ngFor="let item of mySkills; let i = index" (onLoad)="getUserSkills(i)">
+                  <p style="font-weight: 400;">{{item.skill_description}}</p>
+
+                  <p-rating [ngModel]="item?.ratings" [cancel]="false" [readonly]="true"
+                    [iconOnStyle]="{'color':'#0D98BA'}"></p-rating>
+                </div>
+              </div>
+            </div>
+            <!-- skills ends -->
+            <!-- expertise starts -->
+            <div class="text-center mt-3 ">
+              <b class="text-capitalize text-center ">expertise</b>
+              <div class="mt-1 row">
+                <div class="grid grid-cols-{{num}} grid-flow-row gap-4 mt-6">
+                  <div class="expertise" *ngFor="let expert of myExpertise index as i " (onLoad)="getUserExpertise(i)">
+                    <p style=" text-align: center; margin-top: 5px; color: white; font-weight: lighter;">
+                      {{expert.description}}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- expertise ends -->
+
+
+
+            <!-- projetcs start -->
+            <div class="text-center mt-5 ">
+              <b class="text-capitalize ">Projects</b>
+              <div class="mt-5 col-1 flex-row gap-4" style="float: right;">
+                <div class=" mt-5 mb-3 flex-row gap-3">
+                  <button (click)="call()" (click)="copyText(appUrl)" type="button" class="btn btn-secondary " data-toggle="tooltip" data-placement="top"  title="Copy the link below">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                      style="color: #0D98BA; font-weight: bold;" fill="currentColor" class="bi bi-share"
+                      viewBox="0 0 16 16">
+                      <path
+                        d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5zm-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z" />
+                    </svg></button>
+                </div>
+              </div>
+              <div class=" col-10 row gap-4" *ngFor="let project of projects">
+                <div>
+                  <p style="color: #0D98BA; font-weight: bold;">{{project.title}}</p>
+                  <p>{{project.description}}</p>
+                </div>
+              </div>
+
+            </div>
+            <!-- project ends -->
+            <!--  buttons starts-->
+
+            <!--  buttons ends-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</p-dialog>
+
+</div>
+
+
+
+
+
+</div>
+
+<!-- The button to open modal -->
+
+
+<!-- Put this part before </body> tag -->
+<!-- <input type="checkbox" id="my-modal-5" class="modal-toggle" />
+<div class="modal">
+  <div class="modal-box w-11/12 max-w-5xl">
+    <h3 class="font-bold text-lg">Congratulations random Internet user!</h3>
+    <p class="py-4">You've been selected for a chance to get one year of subscription to use Wikipedia for free!</p>
+    <div class="modal-action">
+      <label for="my-modal-5" class="btn">Yay!</label>
+    </div>
+  </div>
+</div> -->
+
+
+
+<p-toast></p-toast>

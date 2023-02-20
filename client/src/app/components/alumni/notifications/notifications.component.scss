@@ -1,0 +1,85 @@
+
+// Notification card
+.rightSection{
+    width: 100%;
+    height: 90vh;
+  padding-top: 2rem;
+  }
+
+  .not{
+   color: #0D98BA;
+    margin-bottom: 2.2rem;
+    width: 100%;
+    font-size: 2.8rem;
+  }
+
+  .cards{
+    margin: 0 auto;
+    width: 90%;
+  }
+
+  .notif{
+    max-height: 100px !important;
+    min-height: 50px !important;
+  }
+
+  .top{
+    display: flex;
+    flex-direction: row;
+    height: 3vh;
+    width: 100%;
+  }
+
+  .profile{
+    width: 2rem;
+    border-radius: 50%;
+    height: 2.5vh;
+    margin-right: 0.3rem;
+  }
+
+  .name{
+    margin-top: 3px;
+    height: 8rem;
+    align-items: flex-end;
+  }
+
+  .timeNow{
+    text-align: right;
+  }
+
+  .bottom{
+    width: 100%;
+    margin-left: 10px;
+    // padding-left: 3rem;
+  }
+  .profileBody{
+    flex-direction: row;
+  }
+
+  .msg{
+    color: green;
+    font-size: 1rem;
+    font-weight: 300;
+    width: 100%;
+
+  }
+
+@media screen and (max-width: 670px){
+
+    //  Styling for notification card
+   .box{
+    width: 100%;
+   }
+   .profileBody{
+    width: 100%;
+    margin: 0 auto;
+
+   }
+   .profile{
+    height: 4vh;
+    width: 8vw;
+   }
+   .not{
+    font-size: 1.8rem;
+   }
+}

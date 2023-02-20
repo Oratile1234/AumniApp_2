@@ -1,0 +1,83 @@
+<div>
+
+
+  <div class="table-responsive mt-5">
+    <table class="table table-striped h-100">
+      <thead>
+        <tr>
+          <th scope="col">No</th>
+          <!-- <th scope="col">Image</th> -->
+          <th scope="col">Name</th>
+          <th scope="col">Surname</th>
+          <th scope="col">Employee number</th>
+          <th scope="col">Email</th>
+          <th scope="col">Phone number</th>
+          <th scope="col">Employee Stat</th>
+          <th scope="col">Account Stat</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of data">
+          <td *ngFor="let val of row">
+            {{val}}
+          </td>
+          <!-- <td>{{user.name}}</td>
+            <td>{{user.surname}}</td>
+            <td>{{user.employee_number}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.phone_number}}</td>
+            <td>{{user.employement_status}}</td> -->
+          <!-- <td style="width: 12%;"><button type="button" class="btn btn-primary btn-sm">Activate</button></td> -->
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="mybtns d-flex h-5  mt-5 box">
+
+    <button type="button" class="btn1 text-white btn-lg shadow"><input type="file" (change)="onFileChange($event)"
+        multiple="false" /> </button>
+
+
+    <button type="button" (click)="showConfirm()" class="btn1 text-white btn-lg shadow"> Register All User's</button>
+  </div>
+
+</div>
+
+<p-toast position="top-center" key="tc"></p-toast>
+<p-toast></p-toast>
+
+<p-toast position="bottom-center" key="c" (onClose)="onReject()" [baseZIndex]="5000">
+  <ng-template let-message pTemplate="message">
+    <div class="p-flex p-flex-column" style="flex: 2">
+      <div class="p-text-center ">
+        <i class="pi pi-exclamation-triangle" style="font-size: 4rem"></i>
+        <h4>{{message.summary}}</h4>
+        <p>{{message.detail}}</p>
+      </div>
+      <!-- <div class="p-grid p-fluid">
+                <div class="p-col-3">
+                    <button type="button" pButton (click)="onConfirm()" label="Yes" class="p-button-success"></button>
+                </div>
+                <div class="p-col-3">
+                    <button type="button" pButtonlabel="No" class="p-button-secondary"></button>
+                </div>
+            </div> -->
+
+      <div class="mybtns d-flex">
+
+        <button class="btn1 text-white btn-lg  shadow" label="Yes" (click)="onConfirm()">Yes</button>
+        <button class="btn2 text-white  btn-lg shadow" label="No" (click)="onReject()">No</button>
+      </div>
+    </div>
+  </ng-template>
+</p-toast>
+
+<p-toast position="bottom-left" key="tc"></p-toast>
+<ngx-loading
+[show]="loading"
+[config]="{
+  animationType: ngxLoadingAnimationTypes.circleSwish,
+  primaryColour: '#ffffff', secondaryColour: '#ffffff',
+  backdropBorderRadius: '3px'
+}">
+</ngx-loading>

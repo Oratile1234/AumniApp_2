@@ -1,0 +1,68 @@
+<p-toast position="bottom-left" key="tc"></p-toast>
+<p-toast></p-toast>
+
+<div class="container">
+    <div class="header mt-5">
+        <h2>Notifications</h2>
+    </div>
+
+    <!-- Notifications card -->
+    <div class="card mb-2 mt-3 d-flex flex-row data shadow justify-content-between" *ngFor="let notif of notifs | paginate: { itemsPerPage: 6, currentPage: p, totalItems: total }; index as i">
+        <div class="d-flex justify-content-start left" (click)="showDialog(i)">
+
+                <div class="circle div1" >
+                    <img src={{notif.image}} *ngIf="notif.image; else elseBlock" class="imgProfile pic">
+
+                    <ng-template #elseBlock>
+                        <div class="avatar imgProfile pic" [ngStyle]="{'background-color': circleColor[i]}">{{ notif.name[0].toUpperCase() }}{{ notif.surname[0].toUpperCase() }}</div>
+                      </ng-template>
+
+                </div>
+
+            <div class="picInfo">
+                <span><b>{{notif.name | titlecase }}</b> requested to change their profile picture</span>
+                <p>{{notif.time_stamp | date:'medium'}}</p>
+            </div>
+        </div>
+
+        <div class="div2">
+            <img src={{notif.imagenew}} alt="" class="pic2">
+        </div>
+
+        <!-- Start of Modal -->
+        <div class="modalDiv" style="text-align: center; height: 5vh">
+            <p-dialog header="Confirmation" [(visible)]="BasicShow" [style]="{width: '30vw'}" [draggable]="false" [resizable]="false">
+
+
+                <span class="profileName">{{info.name}}'s new profile picture</span>
+
+                <p class="mainDiv d-flex justify-content-start p-5">
+                    
+                    <img src={{info.imagenew}} alt="" class="newPic">
+
+                </p>
+
+                <ng-template pTemplate="footer">
+                    <p-button (click)="Approve()" label="Approve" styleClass="p-button-success">
+                    </p-button>
+                    <p-toast position="bottom-left" key="tc"></p-toast>
+                    <p-toast></p-toast>
+                    
+                    <p-button (click)="Decline()" label="Decline" styleClass="p-button-danger">
+                    </p-button>
+                
+                </ng-template>
+            </p-dialog>
+        </div>
+        <!-- End of Modal -->
+    </div>
+
+    <!-- start of pagination -->
+    <div class="pageScroll mt-5">
+        <div class="pgn">
+            <pagination-controls (pageChange)="pageChangeEvent($event)"></pagination-controls>
+        </div>
+    </div>
+    <!-- end of pagination -->
+
+</div>

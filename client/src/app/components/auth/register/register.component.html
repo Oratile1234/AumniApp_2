@@ -1,0 +1,108 @@
+<div class="main py-5">
+    <p class="text-center mb-3">Register now to connect with your alumni</p>
+    <div class="container d-flex justify-content-center align-items-center mb-5">
+
+        <div class="progresses">
+            <div class="steps active">
+                <span class="present">1</span>
+            </div>
+
+            <span class="line"></span>
+
+            <div class="steps">
+                <span>2</span>
+            </div>
+
+            <span class="line"></span>
+
+            <div class="steps">
+                <span class="font-weight-bold">3</span>
+            </div>
+
+            <span class="line"></span>
+
+            <div class="steps">
+                <span class="font-weight-bold">4</span>
+            </div>
+        </div>
+    </div>
+
+    <section class="vh-95 bg-image ">
+        <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+            <div class="container h-100">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                        <div class="card shadow">
+                            <b class="text-center fs-3 text-capitalize mt-1">company details</b>
+                            <div class="card-body p-4">
+
+                                <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label">Company name</label>
+                                        <input type="text" id="company_name" class="form-control form-control-lg" formControlName="company_name" [ngClass]="{ 'is-invalid': submitted && f['company_name'].errors }" />
+                                        <div *ngIf="submitted && f['company_name'].errors" class="invalid-feedback">
+                                            <div *ngIf="f['company_name'].errors['required']" style="font-size: 11px;">
+                                                Company name is required
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="company_reg_no">Company registration
+                                            number</label>
+                                        <input type="text" id="company_reg_no" class="form-control form-control-lg" formControlName="company_reg_no" [ngClass]="{ 'is-invalid': submitted && f['company_reg_no'].errors }" />
+                                        <div *ngIf="submitted && f['company_reg_no'].errors" class="invalid-feedback">
+                                            <div *ngIf="f['company_reg_no'].errors['required']">Fullname is required
+                                            </div>
+
+                                            <div *ngIf="f['company_reg_no'].errors['required']">Company registration number is required</div>
+                                            <div *ngIf="f['company_reg_no'].errors['minlength']">
+                                                Company registration number must be at least 10 numbers
+                                            </div>
+                                            <div *ngIf="f['company_reg_no'].errors['maxlength']">
+                                                Company registration number must not exceed 13 numbers
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="company_email">Company email</label>
+                                        <input type="email" id="company_email" class="form-control form-control-lg" formControlName="company_email" [ngClass]="{ 'is-invalid': submitted && f['company_email'].errors }" />
+                                        <div *ngIf="submitted && f['company_email'].errors" class="invalid-feedback">
+                                            <div *ngIf="f['company_email'].errors['required']">Fullname is required
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="company_number">Company phone number</label>
+                                        <input type="text" id="company_number" class="form-control form-control-lg" formControlName="company_number" [ngClass]="{ 'is-invalid': submitted && f['company_number'].errors }" />
+                                        <div *ngIf="submitted && f['company_number'].errors" class="invalid-feedback">
+                                            <div *ngIf="f['company_number'].errors['required']">Fullname is required
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex justify-content-end bottom">
+                                        <!-- <p class="text-center text-muted mt-0 mb-0">
+                                            Have an account?
+
+                                            <a class="fw-bold text-body"><u routerLink="/auth/login">Login</u></a>
+
+                                        </p> -->
+                                        <button type="submit" class="btn nextBtn" (click)="onSubmit()">
+                                            Next
+                                        </button>
+                                    </div>
+
+                                    <button type="button" class="btn btn-outline-warning cancel" routerLink="/intro/splash">Cancel</button>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

@@ -1,0 +1,74 @@
+
+
+.title{
+    font-family: 'Abril Fatface', cursive;
+    font-size: 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    color: #fff;
+    margin: 0;
+}
+
+.infoDiv{
+    padding-left: 2rem;
+    transform: translateY(13rem);
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.profileBtn{
+    font-size: 2rem;
+    border: 3px solid #fff;
+    width: 55%;
+    // padding: 0.5rem;
+    padding-left: 1.7rem;
+    padding-right: 1rem;
+    border-radius: 5rem 5rem 5rem 5rem;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    transition: 3s all;
+    transform-style: flat;
+}
+
+.surnameSpan{
+    margin-top: -2rem;
+}
+
+.profileBtn:hover{
+    background: #0D98BA;
+    // font-size: 2rem;
+    color: #333;
+    border-color: #333;
+}
+
+.bgImage{
+    width: 100%;
+    height: calc(100vh - 7vh);
+    background-position: center;
+    object-position: center;
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    
+}
+
+@media screen and (max-width: 675px){
+    .title{
+        font-size: 3.5rem;
+    }
+    .surnameSpan{
+        margin-top: -1rem;
+    }
+    .profileBtn{
+        width: 75%;
+    }
+    .screen{
+        // top: -1rem;
+        // object-fit: cover;
+        margin:0;
+    }
+}

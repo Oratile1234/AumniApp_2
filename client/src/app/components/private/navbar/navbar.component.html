@@ -1,0 +1,39 @@
+<nav class="navbar navbar-light bg-light shadow">
+    <div class="container-fluid">
+        <!-- mobile drawer -->
+        <div class="flex-none ">
+          <label for="my-drawer-3" class="btn btn-square lg:hidden btn-ghost">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          </label>
+        </div>
+        <!-- mobile drawer -->
+        <div class="d-flex justify-content-end float-end right-0">
+            <div>
+                <a class="nav-link active me-3" aria-current="page" [routerLink]="['/private/notifs']" routerLinkActive="router-link-active">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" class="bi bi-bell" viewBox="0 0 16 16">
+                    <path
+                        d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z" />
+                </svg>
+                    <!-- <span class="badge indicator-item h-7 w-5"></span> -->
+                </a>  
+            </div>
+            <span class="badge ">{{notifsCounter}}</span>
+            <a class="nav-link active me-3" aria-current="page" [routerLink]="['/private/profile']" routerLinkActive="router-link-active">
+                <!-- <img src="{{image}}" alt="" class="h-10 w-10 flex-shrink-0 rounded-full"> -->
+                <div class="circle" >
+                    <img src={{photoUrl}} *ngIf="showInitials == false" class="imgProfile h-8 w-8 flex-shrink-0 rounded-full image inline-block mb-1">
+                    <div class="avatar h-8 w-8 flex-shrink-0 rounded-full image inline-block mb-1" *ngIf="showInitials == true" [ngStyle]="{'background-color': circleColor}"> {{ firstname }}{{ lastname }}</div>
+                </div>
+            </a>
+
+        </div>
+    </div>
+</nav>
+
+<!-- <p-toast position="bottom-left" key="tc"></p-toast> -->
+<ngx-loading [show]="loading" [config]="{
+  animationType: ngxLoadingAnimationTypes.circleSwish,
+  primaryColour: '#ffffff', secondaryColour: '#ffffff',
+  backdropBorderRadius: '3px'
+}">
+</ngx-loading>

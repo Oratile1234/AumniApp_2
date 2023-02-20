@@ -1,0 +1,94 @@
+// Registration form details
+.register-form {
+    // border: 2px solid grey;
+    width: 60%;
+    height: auto;
+    margin: 20px auto;
+    padding: 15px;
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+.nextBtn {
+    padding: 5px 35px;
+    background: #0D98BA;
+    border-radius: 5px;
+}
+
+.backBtn {
+    padding: 5px 35px;
+    background: var(--btn_secondary);
+    border-radius: 5px;
+}
+
+.main {
+    background-color: #F3F2F2;
+}
+
+p {
+    color: #0d98ba9c;
+}
+
+b {
+    color: #0d98bade;
+}
+
+// Step progress bar
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+// .container {
+//     height: 15vh;
+// }
+.progresses {
+    display: flex;
+    align-items: center;
+}
+
+.line {
+    width: 120px;
+    height: 6px;
+    background: #0D98BA;
+}
+
+.steps {
+    display: flex;
+    background-color: #0D98BA;
+    color: #fff;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.active {
+    background-color: #fff;
+    border: 2px solid grey;
+}
+
+.present {
+    color: #0D98BA;
+    font-weight: 700;
+}
+
+.cancel {
+    margin-left: 40%;
+    margin-top: 5%;
+    border: none;
+}
+
+@media screen and (max-width: 670px) {
+    .progresses {
+        width: 330px;
+    }
+    .line {
+        width: 80px;
+    }
+    .steps {
+        width: 40px;
+    }
+}

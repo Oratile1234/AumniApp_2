@@ -1,0 +1,77 @@
+<div class="container-fluid vh-100 mainContainer" style="background-color: #F0F0F0;">
+    <!-- profile logo -->
+    <div class="pDiv  d-flex flex-row">
+        <img src ="{{prof[0].logo}}" max-width="250" max-height="100" class="logo">
+        <b class="top"><p class="companyName">{{prof[0].company_name}}</p></b>
+    </div>
+    <div class="container d-flex flex-row">
+        <!-- social media links -->
+        <div class="socials" style="background-color: #D9D9D9;">
+            <!-- header -->
+            <div class="title text-white " style="background-color: #0D98BA;"> <b>Social Profile</b></div>
+            <!-- icons -->
+            <div class="socialMedia">
+
+                <div class="links">
+                    <i class="bi bi-facebook fb"></i>
+                    <span>None</span><br>
+                </div>
+                <div class="links">
+                    <i class="bi bi-linkedin ln"></i>
+                    <span>None</span><br>
+                </div>
+                <div class="links">
+                    <i class="bi bi-github gh"></i>
+                    <span>None</span><br>
+                </div>
+                <div class="links">
+                    <i class="bi bi-twitter tr"></i>
+                    <span>None</span><br>
+                </div>
+                <div class="links">
+                    <i class="bi bi-instagram ig"></i>
+                    <span>None</span><br>
+                </div>
+ 
+            </div>
+        </div>
+
+        <!-- Overview class -->
+            <div class="overview" style="background-color: #D9D9D9;">
+                <!-- header -->
+                <div class="title text-white  " style="background-color: #0D98BA;"> <b>Overview</b></div>
+                <!-- body information -->
+                <div class="form-group" >
+                    <div class="companyData">
+                        <b><span>Registered Company name</span></b>
+                        <span>{{prof[0].company_name}}</span><br>
+                    </div>
+                    <div class="companyData">
+                        <b><span>Company Email Id</span></b>
+                        <span>{{prof[0].phone_number}}</span><br>
+                    </div>
+                    <div class="companyData">
+                        <b><span>Registration Number</span></b>
+                        <span>{{prof[0].email}}</span><br>
+                    </div>
+                    <div class="companyData">
+                        <b><span>Company Phone Number</span></b>
+                        <span>{{prof[0].registration_number}}</span>
+                    </div>
+                
+                </div>
+            </div>
+    </div>
+
+</div>
+
+
+<p-toast position="bottom-left" key="tc"></p-toast>
+<ngx-loading
+[show]="loading"
+[config]="{
+  animationType: ngxLoadingAnimationTypes.circleSwish,
+  primaryColour: '#ffffff', secondaryColour: '#ffffff',
+  backdropBorderRadius: '3px'
+}">
+</ngx-loading>

@@ -1,0 +1,172 @@
+<div class="container h-10 text-center mb-4 mt-5 box">
+  <div class="row d-flex justify-content-center align-items-center h-10">
+    <div class="col-xl-9">
+      <!-- <div class="card" style="border-radius: 15px;" style="background: #D9D9D9"> -->
+        <div class="card-body">
+          <h1 class=" mb-2" style="font-size: 26px; color: #0D98BA;">Upload New Employee</h1>
+        </div>
+      </div>
+    </div>
+  <!-- </div> -->
+</div>
+
+<!-- <div class="container h-80"> -->
+  <div class="row d-flex justify-content-center align-items-center h-">
+    <div class="col-xl-9">
+
+      <div class="card" style="border-radius: 15px;" >
+        <div class="card-body">
+          <form [formGroup]="form" (onsubmit)="onSubmit()">
+            <div class="row align-items-center pt-4 pb-1">
+              <div class="col-md-3 ps-5">
+                <h6 class="mb-0" style="font-size: 20px;">Employee number</h6>
+              </div>
+              <div class="col-md-9 pe-5">
+                <input  placeholder="100010" formControlName="employee_no" type="text" id="employee_no"
+                  class="form-control form-control-lg"
+                  [ngClass]="{ 'is-invalid': submitted && f['employee_no'].errors }" />
+                <div *ngIf="submitted && f['employee_no'].errors" class="invalid-feedback">
+                  <div *ngIf="f['employee_no'].errors['required']">Employee number is required</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row align-items-center pt-4 pb-1">
+              <div class="col-md-3 ps-5">
+                <h6 class="mb-0" style="font-size: 20px;">Job Title</h6>
+              </div>
+              <div class="col-md-9 pe-5">
+                <input  placeholder="Full stack" formControlName="job_title" type="text" id="job_title"
+                  class="form-control form-control-lg"
+                  [ngClass]="{ 'is-invalid': submitted && f['job_title'].errors }" />
+                <div *ngIf="submitted && f['job_title'].errors" class="invalid-feedback">
+                  <div *ngIf="f['job_title'].errors['required']">Job Title is required</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row align-items-center py-3 pb-1">
+              <div class="col-md-3 ps-5">
+                <h6 class="mb-0" style="font-size: 20px;">Name</h6>
+              </div>
+              <div class="col-md-9 pe-5">
+                <input placeholder="Name" formControlName="name" type="text" id="name"
+                  class="form-control form-control-lg" [ngClass]="{ 'is-invalid': submitted && f['name'].errors }" />
+                <div *ngIf="submitted && f['name'].errors" class="invalid-feedback">
+                  <div *ngIf="f['name'].errors['required']">Name is required</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row align-items-center py-3 pb-1">
+              <div class="col-md-3 ps-5">
+                <h6 class="mb-0" style="font-size: 20px;">Surname</h6>
+              </div>
+              <div class="col-md-9 pe-5">
+                <input  placeholder="surname" formControlName="surname" type="text" id="surname"
+                  class="form-control form-control-lg" [ngClass]="{ 'is-invalid': submitted && f['surname'].errors }" />
+                <div *ngIf="submitted && f['surname'].errors" class="invalid-feedback">
+                  <div *ngIf="f['surname'].errors['required']">Surname is required</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row align-items-center pt-4 pb-1">
+              <div class="col-md-3 ps-5">
+                <h6 class="mb-0" style="font-size: 20px;">Email</h6>
+              </div>
+              <div class="col-md-9 pe-5">
+                <input placeholder="jonathan@gmail.com" formControlName="email" type="text" id="email"
+                  class="form-control form-control-lg" [ngClass]="{ 'is-invalid': submitted && f['email'].errors }" />
+                <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+                  <div *ngIf="f['email'].errors['required']">Email address is required</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row align-items-center pt-4 pb-1">
+              <div class="col-md-3 ps-5">
+                <h6 class="mb-0" style="font-size: 20px;">Phone Number</h6>
+              </div>
+              <div class="col-md-9 pe-5">
+                <input  placeholder="076000000" formControlName="phone_number" type="text" id="phone_number"
+                  class="form-control form-control-lg"
+                  [ngClass]="{ 'is-invalid': submitted && f['phone_number'].errors }" />
+                <div *ngIf="submitted && f['phone_number'].errors" class="invalid-feedback">
+                  <div *ngIf="f['phone_number'].errors['required']">Phone Number is required</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row align-items-center py-3 pb-1">
+              <div class="col-md-3 ps-5">
+                <h6 class="mb-0" style="font-size: 20px;">Employement Status</h6>
+              </div>
+              <div class="col-md-9 pe-5">
+                <input  placeholder="Employed" formControlName="employement_status" type="text" id="employement_status"
+                  class="form-control form-control-lg" [ngClass]="{ 'is-invalid': submitted && f['employement_status'].errors }" />
+                <div *ngIf="submitted && f['employement_status'].errors" class="invalid-feedback">
+                  <div *ngIf="f['employement_status'].errors['required']">Employement status is required</div>
+                </div>
+              </div>
+            </div>
+            <!--
+            <div class="row align-items-center pt-4 pb-3">
+              <div class="col-md-3 ps-5">
+                <h6 class="mb-0" style="font-size: 20px;">Password</h6>
+              </div>
+              <div class="col-md-9 pe-5">
+                <input placeholder="*******" formControlName="password" type="text" id="password"
+                  class="form-control form-control-lg"
+                  [ngClass]="{ 'is-invalid': submitted && f['password'].errors }" />
+                <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+                  <div *ngIf="f['password'].errors['required']">Default password is required</div>
+                </div>
+              </div>
+            </div> -->
+
+
+            <div class="row align-items-center pt-4 pb-3">
+              <div class="col-md-3 ps-5">
+              </div>
+              <div class="col-md-9 pe-5 d-flex justify-content-between">
+                <button type="button" class="btn backBtn text-white" [routerLink]="['/private/users']">Back</button>
+                <button type="button" class="btn addBtn text-white" (click)="onSubmit()">Add</button>
+              </div>
+            </div>
+          </form>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="container h-10 text-center mt-3 box">
+    <button type="button" routerLink="/private/prev"  class="btn uploadBtn justify-content-center text-white mt-5"> Upload Excel File</button>
+
+    <!-- <div class="row d-flex justify-content-center align-items-center h-10">
+
+
+    <div class="card" style="border-radius: 15px; border: none">
+      <div class="card-body">
+
+      </div>
+    </div>
+  </div> -->
+  <!-- </div> -->
+</div>
+
+
+<p-toast position="bottom-left" key="tc"></p-toast>
+<ngx-loading
+[show]="loading"
+[config]="{
+  animationType: ngxLoadingAnimationTypes.circleSwish,
+  primaryColour: '#ffffff', secondaryColour: '#ffffff',
+  backdropBorderRadius: '3px'
+}">
+</ngx-loading>
+

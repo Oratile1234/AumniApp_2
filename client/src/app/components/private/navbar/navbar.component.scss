@@ -1,0 +1,46 @@
+.badge {
+    position: absolute;
+    top: 0.4rem;
+    right: 8rem;
+    border: none;
+    font-size: 16px;
+    align-items: center;
+    background: none;
+    color: #0e98ba;
+}
+
+// Initials profile picture styling
+.circle{
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgProfile{
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+
+.avatar {
+    color: #fff; 
+    padding: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius:50%;
+    border: 2px solid grey;
+    width:50px;
+    height: 50px;
+    font-weight: 600;
+}
+
+// =========== Desktop View ============= //
+@media (min-width: 992px) {
+    .btn-ghost {
+        display: hidden;
+    }
+}

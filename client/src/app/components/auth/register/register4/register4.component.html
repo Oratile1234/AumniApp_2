@@ -1,0 +1,113 @@
+<div class="main py-5">
+
+
+    <div class="container d-flex justify-content-center align-items-center mb-5">
+        <div class="progresses">
+            <div class="steps">
+                <span class="font-weight-bold">1</span>
+            </div>
+
+            <span class="line"></span>
+
+            <div class="steps ">
+                <span class="font-weight-bold">2</span>
+            </div>
+
+            <span class="line"></span>
+
+            <div class="steps">
+                <span class="font-weight-bold">3</span>
+            </div>
+
+            <span class="line"></span>
+
+            <div class="steps active">
+                <span class="present">4</span>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row mx-5 container-form d-flex justify-content-start">
+        <div class="col-md-6">
+            <div class="card p-5 company">
+                <div class="header mb-3">
+                    <b>Company Information</b>
+                </div>
+                <!-- <form> -->
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="company_name">Company name:</label><br>
+                    <label for="company_name" class="info">{{ name == null ? 'Data not received!' : name }}</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="company_reg_no">Company Registration Number:</label><br>
+                    <label for="company_reg_no" class="info">{{ regnum == null ? 'Data not received!' : regnum
+                        }}</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="company_email">Company Email:</label><br>
+                    <label for="company_email" class="info">{{ email == null ? 'Data not received!' : email }}</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="company_no">Company Number:</label><br>
+                    <label for="company_no" class="info">{{ phone == null ? 'Data not received!' : phone }}</label>
+                </div>
+
+                <!-- </form> -->
+            </div>
+        </div>
+
+        <div class="col-md-6 right">
+            <div class="card p-5 admin">
+                <div class="header mb-3">
+                    <b>Administrator Information</b>
+                </div>
+                <!-- <form> -->
+                <form>
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="admin_name">Administrator Name:</label><br>
+                        <label for="admin_name" class="info">{{ adminName == null ? 'Data not received!' : adminName
+                            }}</label>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="employee_no">Employee Number:</label><br>
+                        <label for="employee_no" class="info">{{ admiEmpNum == null ? 'Data not received!' : admiEmpNum
+                            }}</label>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="password">Password:</label><br>
+                        <label for="password" class="info">{{ adminPassword == null ? 'Data not received!' :
+                            adminPassword }}</label>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="company_type">Email:</label><br>
+                        <label for="company_type" class="info">{{ adimEmail == null ? 'Data not received!' : adimEmail
+                            }}</label>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+
+        <div class="d-flex justify-content-between mt-3">
+            <button type="button" class="btn backBtn" [routerLink]="['/auth/step3']">Back</button>
+            <button type="submit" class="btn finishBtn" (click)="onSubmit()" >Finish</button>
+
+        </div>
+    </div>
+
+    <p-toast position="bottom-left" key="tc"></p-toast>
+    <ngx-loading [show]="loading" [config]="{
+  animationType: ngxLoadingAnimationTypes.circleSwish,
+  primaryColour: '#ffffff', secondaryColour: '#ffffff',
+  backdropBorderRadius: '3px'
+}">
+    </ngx-loading>
+</div>

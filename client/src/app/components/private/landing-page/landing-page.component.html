@@ -1,0 +1,116 @@
+<div class="row">
+
+
+    <!-- main section starts -->
+    <div class="col-md-8 mt-5">
+        <div class="head fs-1 text-capitalize">
+            <b class="h">welcome {{fullname}}</b>
+        </div>
+        <div class="row justify-content-center text-uppercase mt-5 text-center">
+            <!-- all users -->
+            <div class="col-5">
+                <div class="card mb-5 a">
+                    <div class="card-body mx-3">
+                        <b>total employees and alumni</b>
+                        <b>{{totUsers}}</b>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- unemployed alumni -->
+            <div class="col-5">
+                <div class="card mb-5 b">
+                    <div class="card-body mx-3">
+                        <b>unemployed alumni</b>
+                        <b>{{totUnEmpl}}</b>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- employed alumni -->
+            <div class="col-5">
+                <div class="card mb-5 c">
+                    <div class="card-body mx-3">
+                        <b>employed alumni</b>
+                        <b>{{totEmpl}}</b>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- alumni looking for work -->
+            <div class="col-5">
+                <div class="card mb-5 d">
+                    <div class="card-body mx-3">
+                        <b>looking for work</b>
+                        <b>{{totLook}}</b>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- main section ends -->
+
+
+
+    <!-- snapshot section starts -->
+    <div class="col-md-4 snap-sec pt-5">
+        <div class="m-3">
+
+            <h1 class="h fs-5 mb-3">Notifications</h1>
+            <!-- notification -->
+
+            <div class="notifs">
+                <div class="cards card-compact w-full shadow-xl notify" *ngFor="let item of updateNotifs; let i = index" [routerLink]="['/private/notifs']">
+                    <div class="card-body profileBody">
+
+                        <div class="row">
+                            <div class="col-3">
+
+                                <div class="circle" (onload)="color(item.name, i)">
+                                    <img src={{item.image}} *ngIf="item.image; else elseBlock" class="imgProfile profile">
+
+                                    <ng-template #elseBlock>
+                                        <div class="avatar profile" [ngStyle]="{'background-color': circleColor[i]}">{{ item.name[0].toUpperCase() }}{{ item.surname[0].toUpperCase() }}</div>
+                                      </ng-template>
+
+                                    <!-- <div class="avatar h-8 w-8 flex-shrink-0 rounded-full image inline-block mb-1" *ngIf="showInitials == true" [ngStyle]="{'background-color': circleColor[i]}"> {{ item.name[0].toUpperCase() }}{{ item.surname[0].toUpperCase() }}</div> -->
+                                </div>
+
+                            </div>
+                            <div class="col-9">
+                                <div class="row">
+                                    <!-- <div class="col-3">
+                                        <b>{{item.name}}</b>
+
+                                    </div> -->
+                                    <div class="col-9">
+                                        <small>{{item.time_stamp | date:'medium'}}</small>
+
+                                    </div>
+                                    <h5 class="mb-1 name"><b>{{item.name | titlecase}}</b> request to change a profile picture</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="btn btn-link border border-0" [routerLink]="['/private/notifs']" routerLinkActive="router-link-active"><small>view more</small></button>
+
+
+        </div>
+    </div>
+    <!-- snapshot section ends -->
+</div>
+
+
+<p-toast position="bottom-left" key="tc"></p-toast>
+<ngx-loading [show]="loading" [config]="{
+  animationType: ngxLoadingAnimationTypes.circleSwish,
+  primaryColour: '#ffffff', secondaryColour: '#ffffff',
+  backdropBorderRadius: '3px'
+}">
+</ngx-loading>
